@@ -1,0 +1,79 @@
+/* src/components/Portfolio.css */
+.portfolio {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f4f4f4; /* Light background color for contrast */
+}
+
+.portfolio h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.portfolio p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.project {
+  margin: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 500px; /* Increase max width for larger screens */
+  display: inline-block; /* Align projects horizontally */
+  vertical-align: top; /* Align items vertically */
+}
+
+.project:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.project img {
+  width: 100%;
+  height: auto;
+  display: block; /* Remove any default space below image */
+}
+
+.project h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 15px 10px;
+}
+
+.project p {
+  font-size: 1rem;
+  color: #555;
+  margin: 0 10px 15px;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1200px) {
+  .project {
+    max-width: 450px; /* Adjust max width for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio {
+    padding: 30px 10px; /* Adjust padding for smaller screens */
+  }
+
+  .project {
+    max-width: 100%; /* Full width on smaller screens */
+    margin: 10px auto; /* Center align and reduce margin */
+  }
+
+  .portfolio h2 {
+    font-size: 2rem; /* Smaller font size on smaller screens */
+  }
+
+  .portfolio p {
+    font-size: 1rem; /* Smaller font size on smaller screens */
+  }
+}
