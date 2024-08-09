@@ -1,19 +1,38 @@
-// src/About.js
-import React from "react";
+import React, { useState } from "react";
+import Confetti from "react-confetti";
+import "./About.css";
 
 function About() {
+  const [showConfetti, setShowConfetti] = useState(false);
+
+  // Function to handle mouse movement and set confetti state
+  const handleMouseMove = (event) => {
+    const threshold = 300; // Stop confetti after this many pixels (adjust as needed)
+    if (event.clientY <= threshold) {
+      setShowConfetti(true);
+    } else {
+      setShowConfetti(false);
+    }
+    <Confetti
+      numberOfPieces={150}
+      gravity={0.2}
+      colors={["#a6c1ee", "#ffb6c1", "#fdfd96", "#c3fdb8"]}
+    />;
+  };
+
   return (
-    <div>
+    <div className="about-page-container" onMouseMove={handleMouseMove}>
+      {showConfetti && <Confetti />}
       <h1>About Me!</h1>
       <p>
         As a proud veteran and dedicated junior software engineer, I bring a
         unique blend of discipline, critical thinking, and problem-solving
         skills to every project I undertake. My journey has equipped me with a
         solid foundation in various programming languages, including Python,
-        Rust and JavaScript, and a passion for continuous learning and
+        Rust, and JavaScript, and a passion for continuous learning and
         innovation.
       </p>
-      <br></br>
+      <br />
       <p>
         <strong>Project Highlight:</strong> BitBuddy Cryptocurrency Platform
         BitBuddy is a cryptocurrency platform I developed using Flask, enabling
@@ -30,7 +49,8 @@ function About() {
       </p>
       <p>
         Flask, SQLAlchemy, PostgreSQL HTML, CSS, JavaScript External APIs for
-        market data Git, Linux, CMD.<br></br>
+        market data Git, Linux, CMD.
+        <br />
         <strong>
           <em>Technical Skills Programming Languages:</em>
         </strong>
@@ -54,7 +74,8 @@ function About() {
         Data structures, algorithms, debugging, testing
         <strong>
           {" "}
-          Soft Skills<br></br>
+          Soft Skills
+          <br />
         </strong>
         Collaboration and teamwork Effective communication Problem-solving and
         critical thinking Time management Attention to detail Adaptability and

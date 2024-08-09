@@ -29,7 +29,10 @@ function Home() {
           >
             <img src="/images/bitbuddy.png" alt="Bit Buddy Project" />
             <h3>Bit Buddy</h3>
-            <p>A project management tool for developers.</p>
+            <p>
+              A Cryptocurrency platform that allows you to buy, sell and stake
+              cryptocurrencies in a educational environment.
+            </p>
           </a>
         </div>
       </section>

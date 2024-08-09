@@ -7,7 +7,7 @@ function Contact() {
       <h2>Contact</h2>
       <p>
         You can reach me at:{" "}
-        <a href="joeskokan20@gmail.com">joeskokan20@gmail.com</a>
+        <a href="mailto:joeskokan20@gmail.com">joeskokan20@gmail.com</a>
       </p>
     </div>
   );

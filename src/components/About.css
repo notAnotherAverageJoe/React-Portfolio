@@ -1,0 +1,70 @@
+/* About.css */
+.about-page-container {
+  width: 80%;
+  margin: auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-page-container:hover {
+  transform: translateY(-2px) scale(1.01);
+}
+
+.about-page-container h1 {
+  text-align: center;
+  font-size: 3rem;
+  color: #0a74da;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.about-page-container p,
+.about-page-container li {
+  line-height: 1.6;
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 1.2rem;
+}
+
+.about-page-container strong {
+  color: #0a74da;
+}
+
+.about-page-container em {
+  color: #0a74da;
+  font-style: italic;
+}
+
+.about-page-container ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.about-page-container li::marker {
+  color: #0a74da;
+}
+
+.about-page-container a {
+  color: #0a74da;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.about-page-container a:hover {
+  color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .about-page-container h1 {
+    font-size: 2.5rem;
+  }
+
+  .about-page-container {
+    width: 95%;
+  }
+}
