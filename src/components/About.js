@@ -59,9 +59,7 @@ function About() {
           <li>JavaScript</li>
           <li>Python</li>
           <li>HTML</li>
-          <li>Perl</li>
           <li>Ruby</li>
-          <li>Rust</li>
           <li>CSS</li>
           <li>Flask</li>
           <li>SQLAlchemy</li>
@@ -82,11 +80,11 @@ function About() {
         creativity
       </p>
       <p>
-        As a <strong>veteran</strong>, I have honed my skills in discipline,
-        leadership, and adaptability, which I now apply to my career in software
-        engineering. I am eager to bring my diverse background and technical
-        expertise to a dynamic development team, contributing to innovative
-        projects and continuously advancing my skills in the field.
+        <strong>veteran</strong> As a Veteran, I have honed my skills in
+        discipline, leadership, and adaptability, which I now apply to my career
+        in software engineering. I am eager to bring my diverse background and
+        technical expertise to a dynamic development team, contributing to
+        innovative projects and continuously advancing my skills in the field.
       </p>
     </div>
   );
