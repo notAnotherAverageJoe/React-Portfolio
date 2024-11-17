@@ -20,7 +20,7 @@ const Portfolio = () => {
 
   return (
     <div className="portfolio">
-      <h2>My Portfolio</h2>
+      <h2>Joseph Skokans Portfolio</h2>
       <p>Here are some of the projects I've worked on:</p>
       <div className="portfolio-grid">
         {projects.map((project, index) => (
