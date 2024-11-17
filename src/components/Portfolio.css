@@ -1,7 +1,7 @@
 .portfolio {
   text-align: center;
   padding: 50px 20px;
-  background-color: #f4f4f4; /* Light background color for contrast */
+  background-color: #f4f4f4;
 }
 
 .portfolio h2 {
@@ -16,27 +16,38 @@
   margin-bottom: 40px;
 }
 
+.portfolio-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 20px;
+}
+
 .project {
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  justify-content: space-between; /* Ensure button stays at bottom */
   margin: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-width: 500px; /* Increase max width for larger screens */
-  display: inline-block; /* Align projects horizontally */
-  vertical-align: top; /* Align items vertically */
+  max-width: 300px;
+  flex: 1 1 calc(33.333% - 40px); /* Maintain grid layout */
+  box-sizing: border-box;
+  height: 100%; /* Ensure consistent height for cards */
 }
 
 .project:hover {
-  transform: translateY(-5px); /* Lift effect on hover */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .project img {
   width: 100%;
   height: auto;
-  display: block; /* Remove any default space below image */
+  display: block;
 }
 
 .project h3 {
@@ -49,61 +60,45 @@
   font-size: 1rem;
   color: #555;
   margin: 0 10px 15px;
+  flex-grow: 1; /* Allow description to grow as needed */
 }
 
 .project a {
   font-size: 1rem;
-  color: #007bff;
+  color: #000000;
   text-decoration: none;
+  background-color: #8cdeda; 
+  padding: 12px 20px;
+  border-radius: 5px;
+  text-align: center;
+  display: block;
+  margin: 15px auto; /* Center-align the button */
+  transition: background-color 0.3s, transform 0.3s ease-in-out;
 }
 
 .project a:hover {
-  text-decoration: underline;
+  background-color: #04f6ea;
+  transform: translateY(-3px);
 }
 
-/* Media Queries for Responsive Design */
+/* Responsive Adjustments */
 @media (max-width: 1200px) {
   .project {
-    max-width: 450px; /* Adjust max width for medium screens */
+    flex: 1 1 calc(50% - 40px); /* Adjust grid for medium screens */
   }
 }
 
 @media (max-width: 768px) {
-  .portfolio {
-    padding: 30px 10px; /* Adjust padding for smaller screens */
-  }
-
   .project {
-    max-width: 100%; /* Full width on smaller screens */
-    margin: 10px auto; /* Center align and reduce margin */
+    flex: 1 1 100%; /* Adjust grid for smaller screens */
+    margin: 10px auto;
   }
 
   .portfolio h2 {
-    font-size: 2rem; /* Smaller font size on smaller screens */
+    font-size: 2rem;
   }
 
   .portfolio p {
-    font-size: 1rem; /* Smaller font size on smaller screens */
+    font-size: 1rem;
   }
-}
-.project a {
-  font-size: 1.1rem;
-  color: #fff; /* White text color */
-  background-color: #007bff; /* Blue background for contrast */
-  padding: 12px 20px; /* Add more padding to avoid cutting off */
-  border-radius: 5px; /* Rounded corners */
-  text-decoration: none; /* Remove underline */
-  display: inline-block; /* Ensure the element behaves like a block */
-  line-height: 1.5; /* Adjust line-height to prevent clipping */
-  transition: background-color 0.3s, transform 0.3s ease-in-out; /* Smooth transition for hover effects */
-}
-
-.project a:hover {
-  background-color: #0056b3; /* Darker blue on hover */
-  transform: translateY(-3px); /* Lift effect on hover */
-}
-
-.project a:focus {
-  outline: none; /* Remove default outline on focus */
-  box-shadow: 0 0 0 3px rgba(38, 143, 255, 0.5); /* Focus ring with a blue hue */
 }

@@ -3,7 +3,7 @@ import Papa from "papaparse";
 import "./Certification.css";
 
 const Certifications = () => {
-  const [certifications, setCertifications] = useState([]); // Changed from certCertifications to certifications
+  const [certifications, setCertifications] = useState([]);
 
   useEffect(() => {
     // Load and parse the CSV file
@@ -11,9 +11,9 @@ const Certifications = () => {
       .then((response) => response.text())
       .then((data) => {
         Papa.parse(data, {
-          header: true, // Ensure rows are parsed as objects
-          delimiter: ",", // Match the CSV delimiter
-          complete: (result) => setCertifications(result.data), // Set the state with parsed data
+          header: true,
+          delimiter: ",",
+          complete: (result) => setCertifications(result.data), // praesd data
         });
       });
   }, []);

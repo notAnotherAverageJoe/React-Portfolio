@@ -22,7 +22,7 @@ const Portfolio = () => {
     <div className="portfolio">
       <h2>My Portfolio</h2>
       <p>Here are some of the projects I've worked on:</p>
-      <div className="project-grid">
+      <div className="portfolio-grid">
         {projects.map((project, index) => (
           <div key={index} className="project">
             <img
