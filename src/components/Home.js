@@ -12,7 +12,7 @@ function Home() {
           I'm a passionate developer skilled in React, JavaScript, Python and
           more.
         </p>
-        <a href="#portfolio" className="button-main">
+        <a href="/portfolio" className="button-main">
           See My Work
         </a>
       </section>
@@ -35,11 +35,6 @@ function Home() {
             </p>
           </a>
         </div>
-      </section>
-
-      <section id="about" className="about">
-        <h2>About Me</h2>
-        <p>A brief biography or overview of your skills and experience.</p>
       </section>
 
       <section id="contact" className="contact">
