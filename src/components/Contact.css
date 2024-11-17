@@ -1,0 +1,81 @@
+
+
+/* General Container Styling */
+.contact-container {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    padding: 50px;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Heading Styling */
+  .contact-container h2 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  /* Paragraph Styling */
+  .contact-container p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #34495e;
+    margin-bottom: 15px;
+  }
+  
+  .contact-container p a {
+    color: #e74c3c;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  /* Link Hover Effect */
+  .contact-container p a:hover {
+    color: #c0392b;
+    text-decoration: underline;
+  }
+  
+  /* Social Media Icon Styles */
+  .social-links {
+    margin-top: 30px;
+  }
+  
+  .social-links .social-icon {
+    font-size: 2.5rem;
+    color: #34495e;
+    margin: 0 20px;
+    transition: color 0.3s ease;
+  }
+  
+  .social-links .social-icon:hover {
+    color: #e74c3c;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .contact-container {
+      padding: 30px;
+    }
+  
+    .contact-container h2 {
+      font-size: 2rem;
+    }
+  
+    .contact-container p {
+      font-size: 1rem;
+    }
+  
+    .social-links .social-icon {
+      font-size: 2rem;
+      margin: 0 10px;
+    }
+  }
+  

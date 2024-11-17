@@ -36,7 +36,7 @@ function Home() {
                 records. The system also includes role-based access control and
                 integrates weather data from the OpenWeather API.
               </p>
-              <h3>Click for source code!</h3>
+              <h3>View source code!</h3>
             </a>
           </div>
 
@@ -59,7 +59,7 @@ function Home() {
                 estimate returns RESTful API for managing cryptocurrencies
                 Crypto mining game
               </p>
-              <h3>Click for source code!</h3>
+              <h3>View source code!</h3>
             </a>
           </div>
 
@@ -78,7 +78,7 @@ function Home() {
                 and manage favorite jokes. The project uses ActiveRecord for
                 database management and BCrypt for secure password storage.
               </p>
-              <h3>Click for source code!</h3>
+              <h3>View source code!</h3>
             </a>
           </div>
         </div>

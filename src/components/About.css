@@ -1,70 +1,97 @@
 /* About.css */
+
+/* Global styles for About page */
 .about-page-container {
-  width: 80%;
-  margin: auto;
-  background: white;
-  padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease-in-out;
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
 }
 
-.about-page-container:hover {
-  transform: translateY(-2px) scale(1.01);
-}
-
+/* Header Styles */
 .about-page-container h1 {
-  text-align: center;
   font-size: 3rem;
-  color: #0a74da;
-  margin-bottom: 2rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
-.about-page-container p,
-.about-page-container li {
-  line-height: 1.6;
+/* Paragraph Styles */
+.about-page-container p {
   font-size: 1.1rem;
-  color: #555;
-  margin-bottom: 1.2rem;
+  line-height: 1.6;
+  color: #34495e;
+  margin-bottom: 15px;
 }
 
-.about-page-container strong {
-  color: #0a74da;
+.about-page-container p strong {
+  font-weight: bold;
+  color: #e74c3c;
 }
 
-.about-page-container em {
-  color: #0a74da;
+/* Project Highlight Section */
+.about-page-container p em {
   font-style: italic;
+  color: #3498db;
 }
 
 .about-page-container ul {
   list-style-type: disc;
-  padding-left: 20px;
+  margin-left: 20px;
 }
 
-.about-page-container li::marker {
-  color: #0a74da;
+.about-page-container ul li {
+  font-size: 1.1rem;
+  color: #34495e;
+  margin-bottom: 5px;
 }
 
-.about-page-container a {
-  color: #0a74da;
-  text-decoration: none;
-  transition: color 0.3s;
+/* Confetti effect styling */
+.react-confetti {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  pointer-events: none;
 }
 
-.about-page-container a:hover {
-  color: #0056b3;
+/* Soft skills section */
+.about-page-container p strong {
+  font-size: 1.2rem;
+  color: #e67e22;
+  display: block;
+  margin-top: 25px;
 }
 
+/* Add space between the elements */
+.about-page-container br {
+  margin-bottom: 15px;
+}
+
+/* Responsiveness for mobile screens */
 @media (max-width: 768px) {
-  .about-page-container h1 {
-    font-size: 2.5rem;
+  .about-page-container {
+    padding: 20px;
   }
 
-  .about-page-container {
-    width: 95%;
+  .about-page-container h1 {
+    font-size: 2rem;
+  }
+
+  .about-page-container p {
+    font-size: 1rem;
+  }
+
+  .about-page-container ul {
+    margin-left: 15px;
   }
 }
