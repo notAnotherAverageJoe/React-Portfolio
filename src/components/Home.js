@@ -6,7 +6,7 @@ function Home() {
   return (
     <div className="home">
       <section className="hero">
-        <h1>Welcome to My Portfolio</h1>
+        <h1>Greetings, Traveler! Explore the World of Joseph Skokan's Work</h1>
         <p>
           I'm a passionate developer skilled in React, JavaScript, Python and
           more.
