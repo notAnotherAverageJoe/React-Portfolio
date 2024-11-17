@@ -12,7 +12,7 @@
 
 .portfolio p {
   font-size: 1.2rem;
-  color: #666;
+  color: #000000;
   margin-bottom: 40px;
 }
 
@@ -36,7 +36,7 @@
   max-width: 300px;
   flex: 1 1 calc(33.333% - 40px); /* Maintain grid layout */
   box-sizing: border-box;
-  height: 100%; /* Ensure consistent height for cards */
+  height: 100%; 
 }
 
 .project:hover {
