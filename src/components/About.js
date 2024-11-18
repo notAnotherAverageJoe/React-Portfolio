@@ -54,19 +54,17 @@ function About() {
         <strong>
           <em>Technical Skills Programming Languages:</em>
         </strong>
-        <ul>
+        <ul class="no-dot">
           <li>Python</li>
           <li>JavaScript</li>
-          <li>Python</li>
-          <li>HTML</li>
           <li>Ruby</li>
-          <li>CSS</li>
-          <li>Flask</li>
-          <li>SQLAlchemy</li>
+          <li>PHP</li>
+          <li>Erlang</li>
           <li>SQL</li>
-          <li>Rust</li>
           <li>PostgreSQL</li>
           <li>mySQL</li>
+          <li>HTML</li>
+          <li>CSS</li>
         </ul>
         <strong>Tools:</strong> Git, Linux, Command Line Software Development:
         Data structures, algorithms, debugging, testing
@@ -80,7 +78,7 @@ function About() {
         creativity
       </p>
       <p>
-        <strong>veteran</strong> As a Veteran, I have honed my skills in
+        <strong>Veteran</strong> As a Veteran, I have honed my skills in
         discipline, leadership, and adaptability, which I now apply to my career
         in software engineering. I am eager to bring my diverse background and
         technical expertise to a dynamic development team, contributing to

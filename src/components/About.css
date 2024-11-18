@@ -95,3 +95,50 @@
     margin-left: 15px;
   }
 }
+ul.no-dot {
+  list-style-type: none; /* Removes the bullets */
+  padding-left: 0; /* Removes default left padding */
+  margin: 0; /* Removes default margin */
+}
+
+ul.no-dot {
+  list-style-type: none; /* Removes the bullets */
+  padding-left: 0; /* Removes default left padding */
+  margin: 0; /* Removes default margin */
+  display: flex;
+  flex-direction: column; /* Vertically stack list items */
+  align-items: center; /* Centers the list */
+  justify-content: center; /* Ensures items are aligned properly */
+}
+
+ul.no-dot li {
+  font-size: 1.1rem; /* Adjust the font size */
+  color: #34495e; /* Text color */
+  margin-bottom: 15px; /* Space between items */
+  display: flex;
+  align-items: center; /* Vertically aligns the text and arrows */
+  justify-content: center; /* Centers the text horizontally */
+  transition: transform 0.3s ease, color 0.3s ease; /* Adds a smooth transition for hover effects */
+}
+
+/* Add custom arrows to both sides of the list item */
+ul.no-dot li::before,
+ul.no-dot li::after {
+  content: "➤"; /* Unicode arrow, can use other icons */
+  font-size: 1.5rem; /* Size of the icon */
+  margin: 0 10px; /* Space between the icon and text */
+  color: #3498db; /* Icon color */
+  transition: color 0.3s ease; /* Icon color transition */
+}
+
+/* Hover effect to change text color and icon */
+ul.no-dot li:hover {
+  color: #e74c3c; /* Change text color on hover */
+  transform: translateX(10px); /* Subtle movement effect on hover */
+}
+
+ul.no-dot li:hover::before,
+ul.no-dot li:hover::after {
+  color: #e74c3c; /* Change icon color on hover */
+  transform: rotate(15deg); /* Slight rotation of the icon */
+}
