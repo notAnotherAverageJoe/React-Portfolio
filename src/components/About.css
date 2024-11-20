@@ -129,14 +129,14 @@ ul.no-dot li::after {
   transition: color 0.3s ease; /* Icon color transition */
 }
 
-/* Hover effect to change text color and icon */
+
 ul.no-dot li:hover {
-  color: #e74c3c; /* Change text color on hover */
-  transform: translateX(10px); /* Subtle movement effect on hover */
+  color: #e74c3c; 
+  transform: translateX(10px); 
 }
 
 ul.no-dot li:hover::before,
 ul.no-dot li:hover::after {
-  color: #e74c3c; /* Change icon color on hover */
+  color: #e74c3c; 
   transform: rotate(15deg); /* Slight rotation of the icon */
 }
