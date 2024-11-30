@@ -61,10 +61,6 @@ function About() {
           <li>PHP</li>
           <li>Erlang</li>
           <li>SQL</li>
-          <li>PostgreSQL</li>
-          <li>mySQL</li>
-          <li>HTML</li>
-          <li>CSS</li>
         </ul>
         <strong>Tools:</strong> Git, Linux, Command Line Software Development:
         Data structures, algorithms, debugging, testing
