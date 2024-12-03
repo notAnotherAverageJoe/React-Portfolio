@@ -9,23 +9,7 @@
     padding: 10px 0;
   }
   
-  .navbar ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .navbar li {
-    margin: 0 15px;
-  }
-  
-  .navbar a {
-    color: white;
-    text-decoration: none;
-  }
-  
+
 .hero {
   background: url('/public/images/asm.png') no-repeat center center/cover;
   color: white;
@@ -128,4 +112,20 @@ Adjust project layout for three-column grid
 .project:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes glowText {
+  0% {
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(0, 255, 0, 1);
+  }
+  100% {
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+  }
+}
+
+h2 {
+  animation: glowText 1.5s infinite;
 }

@@ -7,11 +7,9 @@ function Home() {
     <div className="home">
       {/* Hero Section */}
       <section className="hero">
-        <h1>Greetings, Traveler! Explore the World of Joseph Skokan's Work</h1>
-        <p>
-          I'm a passionate developer skilled in React, JavaScript, Python, and
-          more.
-        </p>
+        <h1>Greetings, Traveler! Explore my works!</h1>
+        <h4>Location: 🌊West Palm Beach, Florida🌴</h4>
+        <p>Software engineer skilled in React, JavaScript, Python, and more.</p>
         <Link to="/portfolio" className="button-main">
           See My Work
         </Link>
@@ -40,7 +38,7 @@ function Home() {
                 Project Overview: Property Preservation Plus is a full-featured
                 property management application.
               </p>
-              <h3>Source Code</h3>
+              <h3>🔍</h3>
             </a>
           </div>
 
@@ -61,7 +59,7 @@ function Home() {
                 A cryptocurrency platform that allows you to buy, sell, and
                 stake cryptocurrencies in an educational environment.
               </p>
-              <h3>Source Code</h3>
+              <h3>🔍</h3>
             </a>
           </div>
 
@@ -84,7 +82,7 @@ function Home() {
                 transactions, deposits, withdrawals, transfers, and interest
                 calculations.
               </p>
-              <h3>Source Code</h3>
+              <h3>🔍</h3>
             </a>
           </div>
         </div>
