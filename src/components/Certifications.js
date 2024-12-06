@@ -20,7 +20,7 @@ const Certifications = () => {
 
   return (
     <div>
-      <h1>My Certifications</h1>
+      {/* <h1>My Certifications</h1> */}
       <div className="course-grid">
         {certifications.map((course, index) => (
           <div key={index} className="course-card">

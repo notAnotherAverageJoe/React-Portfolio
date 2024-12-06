@@ -1,8 +1,34 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./styles/Home.css";
 import { Link } from "react-router-dom";
 
 function Home() {
+  const audioRef = useRef(null); // Create a ref to hold the audio instance
+  const isPlayingRef = useRef(false); // Track if the sound is already playing
+
+  const playShakeSound = () => {
+    if (audioRef.current && !isPlayingRef.current) {
+      audioRef.current
+        .play()
+        .then(() => {
+          // Set isPlayingRef to true after the play action completes
+          isPlayingRef.current = true;
+        })
+        .catch((error) => {
+          // Handle any errors related to the play attempt
+          console.error("Audio play error:", error);
+        });
+    }
+  };
+
+  const stopShakeSound = () => {
+    if (audioRef.current && isPlayingRef.current) {
+      audioRef.current.pause(); // Stop the sound
+      audioRef.current.currentTime = 0; // Reset the sound to the start
+      isPlayingRef.current = false; // Mark the sound as stopped
+    }
+  };
+
   return (
     <div className="home">
       {/* Hero Section */}
@@ -22,7 +48,11 @@ function Home() {
 
         <div className="projects-container">
           {/* Project 1 */}
-          <div className="project">
+          <div
+            className="project"
+            onMouseOver={playShakeSound} // Play sound on mouse over
+            onMouseOut={stopShakeSound} // Stop sound on mouse out
+          >
             <a
               href="https://github.com/notAnotherAverageJoe/Property-Preservation-Plus"
               target="_blank"
@@ -43,7 +73,11 @@ function Home() {
           </div>
 
           {/* Project 2 */}
-          <div className="project">
+          <div
+            className="project"
+            onMouseOver={playShakeSound} // Play sound on mouse over
+            onMouseOut={stopShakeSound} // Stop sound on mouse out
+          >
             <a
               href="https://github.com/notAnotherAverageJoe/bit_buddy"
               target="_blank"
@@ -64,7 +98,11 @@ function Home() {
           </div>
 
           {/* Project 3 */}
-          <div className="project">
+          <div
+            className="project"
+            onMouseOver={playShakeSound} // Play sound on mouse over
+            onMouseOut={stopShakeSound} // Stop sound on mouse out
+          >
             <a
               href="https://github.com/notAnotherAverageJoe/GG---GiggleGate-A-joke-paradise"
               target="_blank"
@@ -92,6 +130,9 @@ function Home() {
       <footer className="footer">
         <p>&copy; 2024 Joseph Skokan</p>
       </footer>
+
+      {/* Audio element, hidden */}
+      <audio ref={audioRef} src={process.env.PUBLIC_URL + "/assets/woo.mp3"} />
     </div>
   );
 }
