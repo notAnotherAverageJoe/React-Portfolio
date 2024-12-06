@@ -6,7 +6,6 @@ import About from "./components/About";
 import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
 import Certifications from "./components/Certifications";
-
 import "./App.css";
 
 function App() {

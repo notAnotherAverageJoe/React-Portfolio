@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Papa from "papaparse";
-import "./Certification.css";
+import "./styles/Certification.css";
 
 const Certifications = () => {
   const [certifications, setCertifications] = useState([]);

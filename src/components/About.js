@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import Confetti from "react-confetti";
-import "./About.css";
+import "./styles/About.css";
 
 function About() {
   const [showConfetti, setShowConfetti] = useState(false);
 
-  // Function to handle mouse movement and set confetti state
+  // ffunction to handle mouse movement and set confetti state
   const handleMouseMove = (event) => {
-    const threshold = 300; // Stop confetti after this many pixels (adjust as needed)
+    const threshold = 300;
     if (event.clientY <= threshold) {
       setShowConfetti(true);
     } else {
