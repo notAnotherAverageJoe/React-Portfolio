@@ -34,6 +34,10 @@ function Home() {
       {/* Hero Section */}
       <section className="hero">
         <h1>Greetings, Traveler!</h1>
+        <div class="dragon-container">
+          🐉
+          <span class="fire">🔥</span>
+        </div>
       </section>
 
       {/* Portfolio Section */}

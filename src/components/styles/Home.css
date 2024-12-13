@@ -1,4 +1,46 @@
-/* src/Home.css */
+
+.dragon-container {
+  position: relative;
+  display: inline-block;
+  font-size: 3rem; /* Adjust size as needed */
+  cursor: pointer;
+}
+
+.dragon {
+  display: inline-block;
+  transform: scaleX(-1); /* Flips the dragon horizontally */
+}
+
+.fire {
+  position: absolute;
+  top: 50%; /* Position fire at the dragon's mouth */
+  right: 100%; /* Move fire to the left since the dragon is flipped */
+  transform: translateY(-50%) scale(0); /* Center vertically and start hidden */
+  font-size: 2rem;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dragon-container:hover .fire {
+  opacity: 1;
+  transform: scale(1) translateX(-30px); /* Moves the fire leftward on hover */
+  animation: breathFire 1s linear infinite; /* Extended animation duration to 1s */
+}
+
+@keyframes breathFire {
+  0% {
+    transform: translateX(0) scale(1); /* Starts at the mouth */
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-15px) scale(1.2); /* Midway, fireball grows */
+  }
+  100% {
+    transform: translateX(-60px) scale(1.5); /* Moves farther out and grows */
+    opacity: 0.5; /* Fireball starts to fade */
+  }
+}
+
 .home {
   font-family: Arial, sans-serif;
 }
