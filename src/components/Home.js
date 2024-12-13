@@ -33,7 +33,7 @@ function Home() {
     <div className="home">
       {/* Hero Section */}
       <section className="hero">
-        <h1>Greetings, Traveler! Explore my works!</h1>
+        <h1>Greetings, Traveler!</h1>
         <h4>Location: 🌊West Palm Beach, Florida🌴</h4>
         <p>Software engineer skilled in React, JavaScript, Python, and more.</p>
         <Link to="/portfolio" className="button-main">
