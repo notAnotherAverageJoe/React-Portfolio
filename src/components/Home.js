@@ -33,7 +33,10 @@ function Home() {
     <div className="home">
       {/* Hero Section */}
       <section className="hero">
-        <h1>Greetings, Traveler!</h1>
+        <h1 class="rubik-moonrocks-regular">Greetings, Traveler!</h1>
+        <span class="material-symbols-outlined">home</span>
+        <span class="material-symbols-outlined">home</span>
+        <span class="material-symbols-outlined">home</span>
         <div class="dragon-container">
           🐉
           <span class="fire">🔥</span>
