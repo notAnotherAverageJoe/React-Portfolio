@@ -2,44 +2,20 @@ import React, { useRef } from "react";
 import "./styles/Home.css";
 import { Link } from "react-router-dom";
 
-function Home() {
-  const audioRef = useRef(null); // Create a ref to hold the audio instance
-  const isPlayingRef = useRef(false); // Track if the sound is already playing
-
-  const playShakeSound = () => {
-    if (audioRef.current && !isPlayingRef.current) {
-      audioRef.current
-        .play()
-        .then(() => {
-          // Set isPlayingRef to true after the play action completes
-          isPlayingRef.current = true;
-        })
-        .catch((error) => {
-          // Handle any errors related to the play attempt
-          console.error("Audio play error:", error);
-        });
-    }
-  };
-
-  const stopShakeSound = () => {
-    if (audioRef.current && isPlayingRef.current) {
-      audioRef.current.pause(); // Stop the sound
-      audioRef.current.currentTime = 0; // Reset the sound to the start
-      isPlayingRef.current = false; // Mark the sound as stopped
-    }
-  };
+const Home = () => {
+  const audioRef = useRef(null);
 
   return (
     <div className="home">
       {/* Hero Section */}
       <section className="hero">
-        <h1 class="rubik-moonrocks-regular">Greetings, Traveler!</h1>
-        <span class="material-symbols-outlined">home</span>
-        <span class="material-symbols-outlined">home</span>
-        <span class="material-symbols-outlined">home</span>
-        <div class="dragon-container">
+        <h1 className="rubik-moonrocks-regular">Greetings, Traveler!</h1>
+        <span className="material-symbols-outlined">home</span>
+        <span className="material-symbols-outlined">home</span>
+        <span className="material-symbols-outlined">home</span>
+        <div className="dragon-container">
           🐉
-          <span class="fire">🔥</span>
+          <span className="fire">🔥</span>
         </div>
       </section>
 
@@ -59,6 +35,16 @@ function Home() {
             <Link to="/portfolio" className="button-main">
               See My Work
             </Link>
+            {/* Download Resume Section */}
+            <section className="download-resume">
+              <a
+                href={process.env.PUBLIC_URL + "/assets/resume.pdf"}
+                download
+                className="button-main"
+              >
+                Download My Resume
+              </a>
+            </section>
           </div>
         </div>
       </section>
@@ -72,6 +58,6 @@ function Home() {
       <audio ref={audioRef} src={process.env.PUBLIC_URL + "/assets/woo.mp3"} />
     </div>
   );
-}
+};
 
 export default Home;

@@ -188,6 +188,7 @@
   border: 0;
   font-size: 16px;
   user-select: none;
+  margin-bottom: 6px;
 }
 
 .button-main:hover {
