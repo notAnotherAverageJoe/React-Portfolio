@@ -1,0 +1,2 @@
+title,description,url,image
+Traffic Light Simulator,This program simulates a basic traffic light system complete with a pedestrian crossing button allowing for interactive real-time control. The system is designed to run continuously handle non-blocking input and simulate real-world scenarios in an efficient and non-intrusive manner💡,https://github.com/notAnotherAverageJoe/Traffic-Light-Simulation,traffic.jpg

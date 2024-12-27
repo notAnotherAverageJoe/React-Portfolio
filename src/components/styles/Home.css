@@ -238,3 +238,23 @@
   font-weight: 400;
   font-style: normal;
 }
+
+
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 20px; /* Space between columns */
+  height: 100vh; /* Full viewport height */
+  margin-top: 10px;
+}
+
+.left-side {
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+.right-side {
+  background-color: #dcdcdc;
+  padding: 20px;
+}

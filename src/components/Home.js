@@ -47,6 +47,20 @@ const Home = () => {
             </section>
           </div>
         </div>
+        <div class="grid">
+          <div class="left-side">
+            <h2>Embedded Projects</h2>
+            <p>This is the left side content.</p>
+            <Link to="/embedded">
+              <p>ASM Emulator - Virtual CPU</p>
+            </Link>
+            <p>🚦Traffic Lights - Real-Time Operating System🚦</p>
+          </div>
+          <div class="right-side">
+            <h2>Tinker</h2>
+            <p>This is the right side content.</p>
+          </div>
+        </div>
       </section>
 
       {/* Footer Section */}
