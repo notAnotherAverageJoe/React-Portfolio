@@ -57,8 +57,9 @@ function About() {
         <ul class="no-dot">
           <li>Python</li>
           <li>JavaScript</li>
-          <li>Ruby</li>
-          <li>PHP</li>
+          <li>C & C++</li>
+          <li>Rust</li>
+          <li>ASM 86/64 AT&T / Intel Syntax</li>
           <li>Erlang</li>
           <li>SQL</li>
         </ul>

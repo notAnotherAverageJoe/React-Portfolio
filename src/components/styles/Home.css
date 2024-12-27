@@ -258,3 +258,36 @@
   background-color: #dcdcdc;
   padding: 20px;
 }
+
+
+.link-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Spacing between boxes */
+}
+
+.link-box {
+  display: inline-block;
+  text-decoration: none; /* Remove underline */
+  background-color: #8e7b379e; /* Light gray background */
+  color: #333; /* Dark text color */
+  padding: 10px 20px; /* Add padding inside the box */
+  border: 2px solid #ddd; /* Light border */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effect */
+  margin-top: 10px;
+  
+}
+
+.link-box:hover {
+  transform: translateY(-5px); /* Slight upward movement */
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2); /* Emphasize shadow on hover */
+}
+
+.link-box p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center; /* Center text in the box */
+}

@@ -50,15 +50,18 @@ const Home = () => {
         <div class="grid">
           <div class="left-side">
             <h2>Embedded Projects</h2>
-            <p>This is the left side content.</p>
-            <Link to="/embedded">
+            <hr></hr>
+
+            <Link to="/embedded" className="link-box">
               <p>ASM Emulator - Virtual CPU</p>
             </Link>
-            <p>🚦Traffic Lights - Real-Time Operating System🚦</p>
+            <Link to="/embedded" className="link-box">
+              <p>🚦Traffic Lights - Real-Time Operating System🚦</p>
+            </Link>
           </div>
           <div class="right-side">
-            <h2>Tinker</h2>
-            <p>This is the right side content.</p>
+            <h2>🛠️🛠️🛠️Under construction🛠️🛠️🛠️</h2>
+            <p>🚧🚧🚧🚧🚧coming soon🚧🚧🚧🚧🚧</p>
           </div>
         </div>
       </section>
