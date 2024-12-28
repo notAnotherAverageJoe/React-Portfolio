@@ -30,7 +30,8 @@ const Home = () => {
             <h3>Joseph Skokan</h3>
             <h4>Location: 🌊West Palm Beach, Florida🌴</h4>
             <p>
-              Software engineer skilled in React, JavaScript, Python, and more.
+              Software engineer skilled in React, JavaScript, Python, and low
+              level languages.
             </p>
             <Link to="/portfolio" className="button-main">
               See My Work
@@ -49,7 +50,7 @@ const Home = () => {
         </div>
         <div class="grid">
           <div class="left-side">
-            <h2>Embedded Projects</h2>
+            <h2>Low Level Programming</h2>
             <hr></hr>
 
             <Link to="/embedded" className="link-box">
