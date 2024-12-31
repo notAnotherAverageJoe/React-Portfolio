@@ -61,8 +61,8 @@ const Home = () => {
             </Link>
           </div>
           <div class="right-side">
-            <h2>🛠️🛠️🛠️Under construction🛠️🛠️🛠️</h2>
-            <p>🚧🚧🚧🚧🚧coming soon🚧🚧🚧🚧🚧</p>
+            <h2>Data </h2>
+            <p>Data Engineering and Analysis Projects</p>
           </div>
         </div>
       </section>
