@@ -52,7 +52,6 @@ const Home = () => {
       <section id="portfolio" className="portfolio">
         <h2>WHOAMI?</h2>
         {/* <p>Check out some of my recent work.</p> */}
-
         <div className="projects-container">
           {/* Project 1 */}
           <div>
@@ -90,9 +89,11 @@ const Home = () => {
             </Link>
           </div>
           <div class="right-side">
-            <h2>Data </h2>
-            <Link to="/datavisual" className="Link-box">
-              <p>Data Engineering and Analysis Projects</p>
+            <h2>Data Engineering & Analysis Projects</h2>
+            <hr></hr>
+
+            <Link to="/datavisual" className="link-boxv">
+              <p>SQL-Financial Transactions System 💳</p>
             </Link>
           </div>
         </div>
