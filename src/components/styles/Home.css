@@ -293,3 +293,30 @@
 }
 
 
+.eye-container {
+  display: flex;
+  gap: 30px; /* Space between the two eyes */
+  justify-content: center;
+}
+
+.eye {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
+  border: 5px solid #000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.pupil {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #000;
+  border-radius: 50%;
+  transition: transform 0.1s linear;
+}

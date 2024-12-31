@@ -2,6 +2,26 @@ import React, { useRef } from "react";
 import "./styles/Home.css";
 import { Link } from "react-router-dom";
 
+document.addEventListener("mousemove", (event) => {
+  const eyes = document.querySelectorAll(".eye");
+
+  eyes.forEach((eye) => {
+    const pupil = eye.querySelector(".pupil");
+    const rect = eye.getBoundingClientRect();
+
+    const eyeX = rect.left + rect.width / 2;
+    const eyeY = rect.top + rect.height / 2;
+
+    const angle = Math.atan2(event.clientY - eyeY, event.clientX - eyeX);
+
+    const pupilDistance = rect.width / 4; // Maximum distance the pupil can move
+    const pupilX = Math.cos(angle) * pupilDistance;
+    const pupilY = Math.sin(angle) * pupilDistance;
+
+    pupil.style.transform = `translate(${pupilX}px, ${pupilY}px)`;
+  });
+});
+
 const Home = () => {
   const audioRef = useRef(null);
 
@@ -10,6 +30,15 @@ const Home = () => {
       {/* Hero Section */}
       <section className="hero">
         <h1 className="rubik-moonrocks-regular">Greetings, Traveler!</h1>
+        <div class="eye-container">
+          <div class="eye">
+            <div class="pupil"></div>
+          </div>
+          <div class="eye">
+            <div class="pupil"></div>
+          </div>
+        </div>
+
         <span className="material-symbols-outlined">home</span>
         <span className="material-symbols-outlined">home</span>
         <span className="material-symbols-outlined">home</span>
