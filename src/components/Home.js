@@ -62,7 +62,9 @@ const Home = () => {
           </div>
           <div class="right-side">
             <h2>Data </h2>
-            <p>Data Engineering and Analysis Projects</p>
+            <Link to="/datavisual" className="Link-box">
+              <p>Data Engineering and Analysis Projects</p>
+            </Link>
           </div>
         </div>
       </section>

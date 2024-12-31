@@ -271,24 +271,25 @@
   text-decoration: none; /* Remove underline */
   background-color: #8e7b379e; /* Light gray background */
   color: #333; /* Dark text color */
-  padding: 8px 10px; /* Adjust padding to reduce excess space */
+  padding: 6px 8px; /* Reduced padding */
   border: 2px solid #ddd; /* Light border */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border-radius: 8px; /* Slightly smaller rounded corners */
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1); /* Slightly reduced shadow */
   transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effect */
-  margin-top: 10px;
+  margin-top: 8px; /* Slightly smaller margin */
 }
 
 .link-box:hover {
-  transform: translateY(-5px); /* Slight upward movement */
-  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2); /* Emphasize shadow on hover */
+  transform: translateY(-3px); /* Slightly less upward movement */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Subtle hover effect */
 }
 
 .link-box p {
-  margin: 0;
-  font-size: 16px; /* Adjust font size if needed */
+  margin-top: 25px;
+  font-size: 14px; /* Smaller font size */
   font-weight: bold;
   text-align: center; /* Center text in the box */
-  line-height: 1.2; /* Adjust line-height to reduce bottom space */
+  line-height: 1.1; /* Reduced line-height */
 }
+
 
