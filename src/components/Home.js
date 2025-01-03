@@ -76,32 +76,11 @@ const Home = () => {
             </section>
           </div>
         </div>
-        <div class="grid">
-          <div class="left-side">
-            <h2>Low Level Programming</h2>
-            <hr></hr>
-
-            <Link to="/embedded" className="link-box">
-              <p>ASM Emulator - Virtual CPU</p>
-            </Link>
-            <Link to="/embedded" className="link-box">
-              <p>🚦Traffic Lights - Real-Time Operating System🚦</p>
-            </Link>
-          </div>
-          <div class="right-side">
-            <h2>Data Engineering & Analysis Projects</h2>
-            <hr></hr>
-
-            <Link to="/datavisual" className="link-boxv">
-              <p>SQL-Financial Transactions System 💳</p>
-            </Link>
-          </div>
-        </div>
       </section>
 
       {/* Footer Section */}
       <footer className="footer">
-        <p>&copy; 2024 Joseph Skokan</p>
+        <p>&copy; 2025 Joseph Skokan</p>
       </footer>
 
       {/* Audio element, hidden */}

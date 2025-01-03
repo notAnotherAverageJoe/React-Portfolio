@@ -22,12 +22,12 @@ const Portfolio = () => {
   return (
     <div className="portfolio">
       <h2>My Portfolio</h2>
-      <p>Main project secion</p>
-      <Link to="/embedded" className="link-boxv">
-        <p>Low Level / Embedded Projects</p>
-      </Link>{" "}
-      <Link to="/datavisual" className="link-boxv">
-        <p>Data Analytics / Data Engineering</p>
+      <p>project's section</p>
+      <Link to="/embedded" className="xtraBTN">
+        Low Level / Embedded Projects
+      </Link>
+      <Link to="/datavisual" className="xtraBTN">
+        Data Analytics / Data Engineering Projects
       </Link>
       <div className="portfolio-grid">
         {projects.map((project, index) => (
