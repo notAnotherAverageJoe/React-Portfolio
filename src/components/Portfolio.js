@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Papa from "papaparse";
 import "./styles/Portfolio.css";
+import { Link } from "react-router-dom";
 
 const Portfolio = () => {
   const [projects, setProjects] = useState([]);
@@ -21,7 +22,13 @@ const Portfolio = () => {
   return (
     <div className="portfolio">
       <h2>My Portfolio</h2>
-      <p>Here are some of the projects I've worked on:</p>
+      <p>Main project secion</p>
+      <Link to="/embedded" className="link-boxv">
+        <p>Low Level / Embedded Projects</p>
+      </Link>{" "}
+      <Link to="/datavisual" className="link-boxv">
+        <p>Data Analytics / Data Engineering</p>
+      </Link>
       <div className="portfolio-grid">
         {projects.map((project, index) => (
           <div key={index} className="project">
