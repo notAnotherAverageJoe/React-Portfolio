@@ -57,9 +57,10 @@ const Home = () => {
           <div>
             <h3>Joseph Skokan</h3>
             <h4>Location: 🌊West Palm Beach, Florida🌴</h4>
+            <h4>Open for relocation</h4>
             <p>
-              Software engineer skilled in React, JavaScript, Python, and low
-              level languages.
+              Software engineer skilled Fullstack development as well as
+              distributed systems.
             </p>
             <Link to="/portfolio" className="button-main">
               See My Work
