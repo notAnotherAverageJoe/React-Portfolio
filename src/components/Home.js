@@ -59,8 +59,8 @@ const Home = () => {
             <h4>Location: 🌊West Palm Beach, Florida🌴</h4>
             <h4>Open for relocation</h4>
             <p>
-              Software engineer skilled Fullstack development as well as
-              distributed systems.
+              Software engineer skilled in Fullstack development & distributed
+              systems.
             </p>
             <Link to="/portfolio" className="button-main">
               See My Work
