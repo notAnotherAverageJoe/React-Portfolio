@@ -45,6 +45,16 @@ const Portfolio = () => {
           </div>
         ))}
       </div>
+      <Link
+        to="#"
+        className="xtraBTN"
+        onClick={(e) => {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }}
+      >
+        Ride to the top!
+      </Link>
     </div>
   );
 };
