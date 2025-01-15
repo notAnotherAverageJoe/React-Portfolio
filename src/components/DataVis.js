@@ -40,6 +40,10 @@ const Portfolio = () => {
           </div>
         ))}
       </div>
+
+      <Link to="/portfolio" className="xtraBTN">
+        Back to Main Portfolio
+      </Link>
     </div>
   );
 };
