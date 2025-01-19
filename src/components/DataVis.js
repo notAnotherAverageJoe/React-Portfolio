@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Papa from "papaparse";
 import "./styles/Portfolio.css";
+import { Link } from "react-router-dom";
 
 const Portfolio = () => {
   const [projects, setProjects] = useState([]);
