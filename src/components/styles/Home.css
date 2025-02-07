@@ -1,4 +1,6 @@
-
+.body {
+  background-color: #000;
+}
 .dragon-container {
   position: relative;
   display: inline-block;
@@ -265,8 +267,8 @@
 
 .eye {
   position: relative;
-  width: 100px;
-  height: 100px;
+  width: 20px;
+  height: 20px;
   background-color: #fff;
   border: 5px solid #000;
   border-radius: 50%;
@@ -278,8 +280,8 @@
 
 .pupil {
   position: absolute;
-  width: 30px;
-  height: 30px;
+  width: 8px;
+  height: 8px;
   background-color: #000;
   border-radius: 50%;
   transition: transform 0.1s linear;
@@ -303,4 +305,18 @@
   background-color: aquamarine; /* Background color change on hover */
   color: black; /* Change text color to white on hover */
   cursor: pointer; /* Pointer cursor on hover */
+}
+.text-description {
+  width: 870px;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 3.8em;
+}
+
+#myName{
+  font-size: 3rem;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  
+
 }

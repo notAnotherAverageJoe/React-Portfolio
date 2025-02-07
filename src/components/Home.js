@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useState, useEffect } from "react";
 import "./styles/Home.css";
 import { Link } from "react-router-dom";
 
@@ -21,9 +21,26 @@ document.addEventListener("mousemove", (event) => {
     pupil.style.transform = `translate(${pupilX}px, ${pupilY}px)`;
   });
 });
-
 const Home = () => {
-  const audioRef = useRef(null);
+  const [typedText, setTypedText] = useState("");
+  const fullText = "Joseph Skokan";
+  const typingSpeed = 150; // Speed in milliseconds
+
+  useEffect(() => {
+    let i = 0;
+    setTypedText(""); // Ensure it starts empty
+
+    const interval = setInterval(() => {
+      if (i < fullText.length) {
+        setTypedText((prev) => fullText.slice(0, i + 1)); // Correctly slice text
+        i++;
+      } else {
+        clearInterval(interval);
+      }
+    }, typingSpeed);
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, []);
 
   return (
     <div className="home">
@@ -38,24 +55,15 @@ const Home = () => {
             <div class="pupil"></div>
           </div>
         </div>
-
-        <span className="material-symbols-outlined">home</span>
-        <span className="material-symbols-outlined">home</span>
-        <span className="material-symbols-outlined">home</span>
-        <div className="dragon-container">
-          🐉
-          <span className="fire">🔥</span>
-        </div>
       </section>
 
       {/* Portfolio Section */}
       <section id="portfolio" className="portfolio">
         <h2>WHOAMI?</h2>
-        {/* <p>Check out some of my recent work.</p> */}
+        <p className=" type-me">Hi, my name is</p>
+        <h1 id="myName">{typedText}</h1>
         <div className="projects-container">
-          {/* Project 1 */}
           <div>
-            <h3>Joseph Skokan</h3>
             <h4>Location: 🌊West Palm Beach, Florida🌴</h4>
             <h4>Open for relocation</h4>
             <p>
@@ -65,7 +73,6 @@ const Home = () => {
             <Link to="/portfolio" className="button-main">
               See My Work
             </Link>
-            {/* Download Resume Section */}
             <section className="download-resume">
               <a
                 href={process.env.PUBLIC_URL + "/assets/resume.pdf"}
@@ -83,9 +90,6 @@ const Home = () => {
       <footer className="footer">
         <p>&copy; 2025 Joseph Skokan</p>
       </footer>
-
-      {/* Audio element, hidden */}
-      <audio ref={audioRef} src={process.env.PUBLIC_URL + "/assets/woo.mp3"} />
     </div>
   );
 };
