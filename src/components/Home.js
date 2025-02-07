@@ -59,8 +59,6 @@ const Home = () => {
 
       {/* Portfolio Section */}
       <section id="portfolio" className="portfolio">
-        <h2>WHOAMI?</h2>
-        <p className=" type-me">Hi, my name is</p>
         <h1 id="myName">{typedText}</h1>
         <div className="projects-container">
           <div>
