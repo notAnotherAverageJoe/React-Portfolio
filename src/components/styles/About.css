@@ -131,12 +131,12 @@ ul.no-dot li::after {
 
 
 ul.no-dot li:hover {
-  color: #e74c3c; 
+  color: black; 
   transform: translateX(10px); 
 }
 
 ul.no-dot li:hover::before,
 ul.no-dot li:hover::after {
-  color: #e74c3c; 
+  color: #4dffa9; 
   transform: rotate(15deg); /* Slight rotation of the icon */
 }
