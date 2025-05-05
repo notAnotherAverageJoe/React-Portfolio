@@ -1,28 +1,9 @@
 import React, { useState } from "react";
-import Confetti from "react-confetti";
 import "./styles/About.css";
 
 function About() {
-  const [showConfetti, setShowConfetti] = useState(false);
-
-  // ffunction to handle mouse movement and set confetti state
-  const handleMouseMove = (event) => {
-    const threshold = 300;
-    if (event.clientY <= threshold) {
-      setShowConfetti(true);
-    } else {
-      setShowConfetti(false);
-    }
-    <Confetti
-      numberOfPieces={150}
-      gravity={0.2}
-      colors={["#a6c1ee", "#ffb6c1", "#fdfd96", "#c3fdb8"]}
-    />;
-  };
-
   return (
-    <div className="about-page-container" onMouseMove={handleMouseMove}>
-      {showConfetti && <Confetti />}
+    <div className="about-page-container">
       <h1>About Me!</h1>
       <p>
         As a proud veteran and dedicated junior software engineer, I bring a
@@ -58,10 +39,10 @@ function About() {
           <li>Python</li>
           <li>JavaScript</li>
           <li>C & C++</li>
-          <li>Rust</li>
           <li>ASM 86/64 AT&T / Intel Syntax</li>
           <li>Erlang</li>
           <li>SQL</li>
+          <li>COBOL</li>
         </ul>
         <strong>Tools:</strong> Git, Linux, Command Line Software Development:
         Data structures, algorithms, debugging, testing
