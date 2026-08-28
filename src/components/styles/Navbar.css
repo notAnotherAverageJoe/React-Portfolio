@@ -135,7 +135,7 @@
     padding: 16px 18px 22px;
     flex-direction: column;
     align-items: stretch;
-    background: rgba(12, 12, 11, 0.96);
+    background: #0c0c0b;
     border-bottom: 1px solid var(--line);
   }
 

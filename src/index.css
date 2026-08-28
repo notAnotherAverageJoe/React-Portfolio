@@ -261,6 +261,13 @@ code {
   color: var(--accent);
 }
 
+.about-copy a,
+.lede a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 @media (max-width: 720px) {
   .page {
     padding: calc(var(--nav-h) + 32px) 18px 64px;

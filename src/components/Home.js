@@ -79,7 +79,7 @@ function Home() {
           <div className="section-head">
             <div>
               <p className="kicker">Featured</p>
-              <h2>Shipped for a real company</h2>
+              <h2>A live product for a real shop</h2>
             </div>
             <Link to="/work/hem-over-heels" className="btn btn-ghost">
               Case study
