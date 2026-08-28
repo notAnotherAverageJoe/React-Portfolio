@@ -1,52 +1,39 @@
-import React, { useEffect, useState } from "react";
-import Papa from "papaparse";
-import "./styles/Portfolio.css";
+import React from "react";
 import { Link } from "react-router-dom";
+import { projects } from "../data/projects";
+import ProjectCard from "./ProjectCard";
+import "./styles/Home.css";
+import "./styles/Portfolio.css";
 
-const Portfolio = () => {
-  const [projects, setProjects] = useState([]);
-
-  useEffect(() => {
-    // Load and parse CSV file
-    fetch("/dataVisual.csv")
-      .then((response) => response.text())
-      .then((data) => {
-        Papa.parse(data, {
-          header: true,
-          delimiter: ",",
-          complete: (result) => setProjects(result.data),
-        });
-      });
-  }, []);
+function DataVis() {
+  const dataProjects = projects.filter(
+    (project) => project.category === "data"
+  );
 
   return (
-    <div className="portfolio">
-      <h2>Data Analytics & Data Engineering</h2>
-      <p>
-        All projects here are focused on Databases, Excel, CSV's and POWER BI
-      </p>
-      <div className="portfolio-grid">
-        {projects.map((project, index) => (
-          <div key={index} className="project">
-            <img
-              src={`/images/${project.image}`}
-              alt={project.title}
-              className="project-image"
-            />
-            <h3>{project.title}</h3>
-            <p>{project.description}</p>
-            <a href={project.url} target="_blank" rel="noopener noreferrer">
-              View Project
-            </a>
+    <div className="page">
+      <div className="wrap">
+        <header className="work-intro">
+          <p className="kicker">Data</p>
+          <h1 className="display">Analytics and engineering</h1>
+          <p className="lede">
+            SQL systems, dashboards, and document generation — the reporting
+            layer around the applications.
+          </p>
+          <div className="btn-row">
+            <Link to="/portfolio" className="btn btn-ghost">
+              Back to work
+            </Link>
           </div>
-        ))}
+        </header>
+        <div className="project-grid">
+          {dataProjects.map((project) => (
+            <ProjectCard key={project.title} project={project} />
+          ))}
+        </div>
       </div>
-
-      <Link to="/portfolio" className="xtraBTN">
-        Back to Main Portfolio
-      </Link>
     </div>
   );
-};
+}
 
-export default Portfolio;
+export default DataVis;

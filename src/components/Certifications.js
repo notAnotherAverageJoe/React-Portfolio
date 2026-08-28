@@ -1,43 +1,34 @@
-import React, { useEffect, useState } from "react";
-import Papa from "papaparse";
+import React from "react";
+import { certifications } from "../data/projects";
 import "./styles/Certification.css";
 
-const Certifications = () => {
-  const [certifications, setCertifications] = useState([]);
-
-  useEffect(() => {
-    // Load and parse the CSV file
-    fetch("/certifications.csv")
-      .then((response) => response.text())
-      .then((data) => {
-        Papa.parse(data, {
-          header: true,
-          delimiter: ",",
-          complete: (result) => setCertifications(result.data), // praesd data
-        });
-      });
-  }, []);
-
+function Certifications() {
   return (
-    <div>
-      {/* <h1>My Certifications</h1> */}
-      <div className="course-grid">
-        {certifications.map((course, index) => (
-          <div key={index} className="course-card">
-            <img
-              src={`/images/${course.image}`}
-              alt={course.title}
-              className="course-image"
-            />
-            <h2>{course.title}</h2>
-            <p>
-              <strong>{course.institution}</strong> ({course.year})
-            </p>
-          </div>
-        ))}
+    <div className="page">
+      <div className="wrap">
+        <header className="certs-intro">
+          <p className="kicker">Credentials</p>
+          <h1 className="display">Certifications</h1>
+          <p className="lede">
+            Formal coursework across software engineering, systems languages,
+            and embedded development.
+          </p>
+        </header>
+
+        <div className="course-grid">
+          {certifications.map((course) => (
+            <article className="card course-card" key={course.title}>
+              <img src={`/images/${course.image}`} alt="" />
+              <h2>{course.title}</h2>
+              <p>
+                {course.institution} · {course.year}
+              </p>
+            </article>
+          ))}
+        </div>
       </div>
     </div>
   );
-};
+}
 
 export default Certifications;

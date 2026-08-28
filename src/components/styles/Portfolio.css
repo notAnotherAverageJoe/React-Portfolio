@@ -1,105 +1,88 @@
-.portfolio {
-  text-align: center;
-  padding: 50px 20px;
-  background-color: #f4f4f4;
-}
-
-.portfolio h2 {
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 20px;
-}
-
-.portfolio p {
-  font-size: 1.2rem;
-  color: #000000;
+.work-intro {
+  max-width: 42rem;
   margin-bottom: 40px;
 }
 
-.portfolio-grid {
+.work-intro h1 {
+  font-size: clamp(2.6rem, 6vw, 4.2rem);
+}
+
+.filters {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  margin: 20px;
+  gap: 8px;
+  margin: 28px 0 32px;
 }
 
-.project {
-  display: flex;
-  flex-direction: column; /* Stack content vertically */
-  justify-content: space-between; /* Ensure button stays at bottom */
-  margin: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-width: 300px;
-  flex: 1 1 calc(33.333% - 40px); /* Maintain grid layout */
-  box-sizing: border-box;
-  height: 100%; 
+.filter-btn {
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
 }
 
-.project:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+.filter-btn.active,
+.filter-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-soft);
 }
 
-.project img {
-  width: 100%;
-  height: auto;
-  display: block;
+.work-featured {
+  margin-bottom: 36px;
 }
 
-.project h3 {
-  font-size: 1.5rem;
-  color: #333;
-  margin: 15px 10px;
+.case-page h1 {
+  font-size: clamp(2.6rem, 6vw, 4.4rem);
 }
 
-.project p {
-  font-size: 1rem;
-  color: #555;
-  margin: 0 10px 15px;
-  flex-grow: 1; /* Allow description to grow as needed */
+.case-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: start;
+  margin-top: 36px;
 }
 
-.project a {
-  font-size: 1rem;
-  color: #000000;
-  text-decoration: none;
-  background-color: #8cdeda; 
-  padding: 12px 20px;
-  border-radius: 5px;
-  text-align: center;
-  display: block;
-  margin: 15px auto; /* Center-align the button */
-  transition: background-color 0.3s, transform 0.3s ease-in-out;
+.case-facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin: 28px 0;
 }
 
-.project a:hover {
-  background-color: #04f6ea;
-  transform: translateY(-3px);
+.case-facts div {
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
 }
 
-/* Responsive Adjustments */
-@media (max-width: 1200px) {
-  .project {
-    flex: 1 1 calc(50% - 40px); /* Adjust grid for medium screens */
-  }
+.case-facts dt {
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
-@media (max-width: 768px) {
-  .project {
-    flex: 1 1 100%; /* Adjust grid for smaller screens */
-    margin: 10px auto;
+.case-facts dd {
+  margin: 6px 0 0;
+}
+
+.case-visual {
+  position: sticky;
+  top: calc(var(--nav-h) + 24px);
+}
+
+@media (max-width: 900px) {
+  .case-grid,
+  .case-facts {
+    grid-template-columns: 1fr;
   }
 
-  .portfolio h2 {
-    font-size: 2rem;
-  }
-
-  .portfolio p {
-    font-size: 1rem;
+  .case-visual {
+    position: static;
   }
 }
-

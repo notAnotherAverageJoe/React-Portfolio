@@ -1,38 +1,150 @@
-/* src/Navbar.css */
-.navbar {
-  background-color: #333;
-  padding: 10px;
+.site-header {
   position: fixed;
   top: 0;
-  width: 100%;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: adds a shadow for better separation from content */
+  left: 0;
+  right: 0;
+  z-index: 40;
+  height: var(--nav-h);
+  border-bottom: 1px solid var(--line);
+  background: rgba(12, 12, 11, 0.78);
+  backdrop-filter: blur(16px);
 }
 
-.navbar-menu {
-  list-style: none;
+.nav-inner {
+  height: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 24px;
   display: flex;
-  justify-content: space-around;
-  margin: 0;
-  padding: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
 }
 
-.navbar-menu li {
-  display: inline;
-}
-
-.navbar-menu a {
-  color: white;
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   text-decoration: none;
-  padding: 10px;
+  color: var(--text);
 }
 
-.navbar-menu a:hover {
-  background-color: #575757;
-  border-radius: 4px;
+.brand-mark {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
 }
 
-/* Add some padding to the body to avoid content being hidden behind the fixed navbar */
-body {
-  padding-top: 60px; /* Adjust this value based on the height of your navbar */
+.brand-name {
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.brand-role {
+  display: block;
+  color: var(--text-dim);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-links a {
+  padding: 8px 12px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 550;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.nav-cta {
+  margin-left: 8px;
+  min-height: 38px;
+  padding: 0 14px;
+  font-size: 0.82rem;
+}
+
+.nav-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.nav-toggle span,
+.nav-toggle span::before,
+.nav-toggle span::after {
+  display: block;
+  width: 16px;
+  height: 1.5px;
+  background: currentColor;
+  position: relative;
+  margin: 0 auto;
+}
+
+.nav-toggle span::before,
+.nav-toggle span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.nav-toggle span::before {
+  top: -5px;
+}
+
+.nav-toggle span::after {
+  top: 5px;
+}
+
+@media (max-width: 860px) {
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: var(--nav-h);
+    left: 0;
+    right: 0;
+    padding: 16px 18px 22px;
+    flex-direction: column;
+    align-items: stretch;
+    background: rgba(12, 12, 11, 0.96);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-cta {
+    margin: 8px 0 0;
+    width: 100%;
+  }
 }
