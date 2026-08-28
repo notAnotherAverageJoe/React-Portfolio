@@ -7,4 +7,7 @@ test("renders portfolio identity", () => {
     screen.getByRole("heading", { name: /joseph skokan/i })
   ).toBeInTheDocument();
   expect(screen.getAllByText(/hem over heels/i).length).toBeGreaterThan(0);
+  expect(
+    screen.getByAltText(/hem over heels app screens/i)
+  ).toBeInTheDocument();
 });
