@@ -46,13 +46,9 @@ function Home() {
               <Link to="/portfolio" className="btn btn-primary">
                 View work
               </Link>
-              <a
-                className="btn btn-ghost"
-                href={`${process.env.PUBLIC_URL}/assets/resume.pdf`}
-                download
-              >
-                Download resume
-              </a>
+              <Link to="/contact" className="btn btn-ghost">
+                Contact
+              </Link>
             </div>
           </div>
 
