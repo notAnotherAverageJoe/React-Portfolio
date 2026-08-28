@@ -5,7 +5,6 @@ import "./styles/Navbar.css";
 const links = [
   { to: "/portfolio", label: "Work" },
   { to: "/about", label: "About" },
-  { to: "/Certifications", label: "Certifications" },
   { to: "/contact", label: "Contact" },
 ];
 
@@ -46,14 +45,6 @@ function Navbar() {
               {link.label}
             </NavLink>
           ))}
-          <a
-            className="btn btn-primary nav-cta"
-            href={`${process.env.PUBLIC_URL}/assets/resume.pdf`}
-            download
-            onClick={close}
-          >
-            Resume
-          </a>
         </nav>
       </div>
     </header>

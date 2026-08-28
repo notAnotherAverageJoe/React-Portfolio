@@ -20,13 +20,6 @@ const contacts = [
     href: "https://github.com/notAnotherAverageJoe",
     note: "Source for selected projects.",
   },
-  {
-    label: "Resume",
-    title: "Download PDF",
-    href: `${process.env.PUBLIC_URL}/assets/resume.pdf`,
-    note: "Current experience and skills.",
-    download: true,
-  },
 ];
 
 function Contact() {
@@ -46,11 +39,9 @@ function Contact() {
               key={item.label}
               className="card contact-item"
               href={item.href}
-              {...(item.download
-                ? { download: true }
-                : item.href.startsWith("http")
-                  ? { target: "_blank", rel: "noopener noreferrer" }
-                  : {})}
+              {...(item.href.startsWith("http")
+                ? { target: "_blank", rel: "noopener noreferrer" }
+                : {})}
             >
               <p className="kicker">{item.label}</p>
               <h2>{item.title}</h2>
