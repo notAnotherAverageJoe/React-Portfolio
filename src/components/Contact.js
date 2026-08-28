@@ -1,37 +1,63 @@
 import React from "react";
 import "./styles/Contact.css";
 
+const contacts = [
+  {
+    label: "Email",
+    title: "joeskokan20@gmail.com",
+    href: "mailto:joeskokan20@gmail.com",
+    note: "Best way to reach me.",
+  },
+  {
+    label: "LinkedIn",
+    title: "joseph-skokan",
+    href: "https://www.linkedin.com/in/joseph-skokan/",
+    note: "Work history and recommendations.",
+  },
+  {
+    label: "GitHub",
+    title: "notAnotherAverageJoe",
+    href: "https://github.com/notAnotherAverageJoe",
+    note: "Source for selected projects.",
+  },
+  {
+    label: "Resume",
+    title: "Download PDF",
+    href: `${process.env.PUBLIC_URL}/assets/resume.pdf`,
+    note: "Current experience and skills.",
+    download: true,
+  },
+];
+
 function Contact() {
   return (
-    <div className="contact-container">
-      <h2>Contact</h2>
-      <p>
-        You can reach me at:{" "}
-        <a href="mailto:joeskokan20@gmail.com">joeskokan20@gmail.com</a>
-      </p>
-      <p>
-        <strong>Phone number:</strong> 571-274-1493
-      </p>
+    <div className="page contact-page">
+      <div className="wrap">
+        <p className="kicker">Contact</p>
+        <h1 className="display">Let’s talk.</h1>
+        <p className="lede">
+          I am available for engineering roles and for custom software through
+          Tempest Labs. West Palm Beach, Florida — open to relocation.
+        </p>
 
-      <div className="social-links">
-        <a
-          href="https://github.com/notAnotherAverageJoe"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="GitHub Profile"
-          className="social-icon"
-        >
-          <i className="fab fa-github"></i>
-        </a>
-        <a
-          href="https://www.linkedin.com/in/joseph-skokan/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="LinkedIn Profile"
-          className="social-icon"
-        >
-          <i className="fab fa-linkedin"></i>
-        </a>
+        <div className="contact-grid">
+          {contacts.map((item) => (
+            <a
+              key={item.label}
+              className="card contact-item"
+              href={item.href}
+              {...(item.download
+                ? { download: true }
+                : item.href.startsWith("http")
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {})}
+            >
+              <p className="kicker">{item.label}</p>
+              <h2>{item.title}</h2>
+              <p>{item.note}</p>
+            </a>
+          ))}
+        </div>
       </div>
     </div>
   );

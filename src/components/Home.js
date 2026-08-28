@@ -1,95 +1,180 @@
-import React, { useState, useEffect } from "react";
-import "./styles/Home.css";
+import React from "react";
 import { Link } from "react-router-dom";
+import { featuredProject, selectedProjects } from "../data/projects";
+import PhoneMock from "./PhoneMock";
+import ProjectCard from "./ProjectCard";
+import "./styles/Home.css";
 
-document.addEventListener("mousemove", (event) => {
-  const eyes = document.querySelectorAll(".eye");
+const skills = [
+  {
+    title: "Languages",
+    items: "JavaScript, TypeScript, Python, C, C++, SQL, Erlang, Rust",
+  },
+  {
+    title: "Product",
+    items: "React, mobile shipping, REST APIs, PostgreSQL, Node.js",
+  },
+  {
+    title: "Systems",
+    items: "Linux, Git, embedded C, distributed services, COBOL",
+  },
+  {
+    title: "Practice",
+    items: "Client delivery, UI polish, testing, documentation",
+  },
+];
 
-  eyes.forEach((eye) => {
-    const pupil = eye.querySelector(".pupil");
-    const rect = eye.getBoundingClientRect();
-
-    const eyeX = rect.left + rect.width / 2;
-    const eyeY = rect.top + rect.height / 2;
-
-    const angle = Math.atan2(event.clientY - eyeY, event.clientX - eyeX);
-
-    const pupilDistance = rect.width / 4; // Maximum distance the pupil can move
-    const pupilX = Math.cos(angle) * pupilDistance;
-    const pupilY = Math.sin(angle) * pupilDistance;
-
-    pupil.style.transform = `translate(${pupilX}px, ${pupilY}px)`;
-  });
-});
-const Home = () => {
-  const [typedText, setTypedText] = useState("");
-  const fullText = "Joseph Skokan";
-  const typingSpeed = 150; // Speed in milliseconds
-
-  useEffect(() => {
-    let i = 0;
-    setTypedText(""); // Ensure it starts empty
-
-    const interval = setInterval(() => {
-      if (i < fullText.length) {
-        setTypedText((prev) => fullText.slice(0, i + 1)); // Correctly slice text
-        i++;
-      } else {
-        clearInterval(interval);
-      }
-    }, typingSpeed);
-
-    return () => clearInterval(interval); // Cleanup on unmount
-  }, []);
-
+function Home() {
   return (
-    <div className="home">
-      {/* Hero Section */}
-      <section className="hero">
-        <h1 className="rubik-moonrocks-regular">Greetings, Traveler!</h1>
-        <div class="eye-container">
-          <div class="eye">
-            <div class="pupil"></div>
-          </div>
-          <div class="eye">
-            <div class="pupil"></div>
-          </div>
-        </div>
-      </section>
-
-      {/* Portfolio Section */}
-      <section id="portfolio" className="portfolio">
-        <h1 id="myName">{typedText}</h1>
-        <div className="projects-container">
+    <div className="page">
+      <div className="wrap">
+        <section className="hero">
           <div>
-            <h4>Location: 🌊West Palm Beach, Florida🌴</h4>
-            <h4>Open for relocation</h4>
-            <p>
-              Software engineer skilled in Fullstack development & distributed
-              systems.
+            <p className="kicker">Software engineer · Tempest Labs</p>
+            <h1 className="display hero-title">Joseph Skokan</h1>
+            <p className="lede">
+              I build production software for real businesses — customer-facing
+              mobile apps, full-stack systems, and the operational tools that
+              keep a shop running.
             </p>
-            <Link to="/portfolio" className="button-main">
-              See My Work
-            </Link>
-            <section className="download-resume">
+            <div className="hero-meta">
+              <span>West Palm Beach, Florida</span>
+              <span>USAF Veteran</span>
+              <span>Open to relocation</span>
+            </div>
+            <div className="btn-row">
+              <Link to="/portfolio" className="btn btn-primary">
+                View work
+              </Link>
               <a
-                href={process.env.PUBLIC_URL + "/assets/resume.pdf"}
+                className="btn btn-ghost"
+                href={`${process.env.PUBLIC_URL}/assets/resume.pdf`}
                 download
-                className="button-main"
               >
-                Download My Resume
+                Download resume
               </a>
-            </section>
+            </div>
           </div>
-        </div>
-      </section>
 
-      {/* Footer Section */}
-      <footer className="footer">
-        <p>&copy; 2025 Joseph Skokan</p>
-      </footer>
+          <aside className="hero-aside">
+            <article className="card skill-block">
+              <p className="kicker">Currently</p>
+              <h3>Hem Over Heels</h3>
+              <p>Official customer app for a Boynton Beach shop, live on the App Store and Google Play.</p>
+            </article>
+            <article className="card skill-block">
+              <p className="kicker">Studio</p>
+              <h3>Tempest Labs</h3>
+              <p>Custom software for small businesses — shipping, not pitching.</p>
+            </article>
+            <article className="card skill-block">
+              <p className="kicker">Background</p>
+              <h3>USAF Veteran</h3>
+              <p>Discipline from service, then software — Springboard, systems work, and client delivery.</p>
+            </article>
+          </aside>
+        </section>
+
+        <section className="featured">
+          <div className="section-head">
+            <div>
+              <p className="kicker">Featured</p>
+              <h2>A live product for a real shop</h2>
+            </div>
+            <Link to="/work/hem-over-heels" className="btn btn-ghost">
+              Case study
+            </Link>
+          </div>
+
+          <article className="card featured-card">
+            <div className="featured-visual">
+              <PhoneMock />
+            </div>
+            <div className="featured-copy">
+              <p className="kicker">{featuredProject.tag}</p>
+              <h3>{featuredProject.title}</h3>
+              <p>{featuredProject.longDescription}</p>
+              <ul className="featured-list">
+                {featuredProject.highlights.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+              <div className="btn-row">
+                <Link to="/work/hem-over-heels" className="btn btn-primary">
+                  Read the story
+                </Link>
+                <a
+                  className="btn btn-ghost"
+                  href={featuredProject.links[0].href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  App Store
+                </a>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section className="selected">
+          <div className="section-head">
+            <div>
+              <p className="kicker">Selected work</p>
+              <h2>Applications and systems</h2>
+            </div>
+            <Link to="/portfolio" className="btn btn-ghost">
+              All projects
+            </Link>
+          </div>
+          <div className="project-grid">
+            {selectedProjects.map((project) => (
+              <ProjectCard key={project.title} project={project} />
+            ))}
+          </div>
+        </section>
+
+        <section className="skills">
+          <div className="section-head">
+            <div>
+              <p className="kicker">Capabilities</p>
+              <h2>What I work with</h2>
+            </div>
+          </div>
+          <div className="skill-grid">
+            {skills.map((skill) => (
+              <article className="card skill-block" key={skill.title}>
+                <h3>{skill.title}</h3>
+                <p>{skill.items}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="card home-cta">
+          <p className="kicker">Contact</p>
+          <h2>Have a product that needs to ship?</h2>
+          <p>
+            I work with businesses that need custom software — and I am open to
+            engineering roles that want someone who has already delivered to
+            production.
+          </p>
+          <div className="btn-row">
+            <Link to="/contact" className="btn btn-primary">
+              Get in touch
+            </Link>
+            <a
+              className="btn btn-ghost"
+              href="https://www.linkedin.com/in/joseph-skokan/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
+          </div>
+        </section>
+      </div>
     </div>
   );
-};
+}
 
 export default Home;

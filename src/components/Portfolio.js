@@ -1,62 +1,88 @@
-import React, { useEffect, useState } from "react";
-import Papa from "papaparse";
-import "./styles/Portfolio.css";
+import React, { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import { featuredProject, projects } from "../data/projects";
+import ProjectCard from "./ProjectCard";
+import PhoneMock from "./PhoneMock";
+import "./styles/Home.css";
+import "./styles/Portfolio.css";
 
-const Portfolio = () => {
-  const [projects, setProjects] = useState([]);
+const filters = [
+  { id: "all", label: "All" },
+  { id: "apps", label: "Applications" },
+  { id: "systems", label: "Systems" },
+  { id: "data", label: "Data" },
+];
 
-  useEffect(() => {
-    // Load and parse CSV file
-    fetch("/data.csv")
-      .then((response) => response.text())
-      .then((data) => {
-        Papa.parse(data, {
-          header: true,
-          delimiter: ";",
-          complete: (result) => setProjects(result.data),
-        });
-      });
-  }, []);
+function Portfolio() {
+  const [filter, setFilter] = useState("all");
+
+  const visible = useMemo(
+    () =>
+      projects.filter((project) => {
+        if (project.category === "featured") return false;
+        return filter === "all" || project.category === filter;
+      }),
+    [filter]
+  );
 
   return (
-    <div className="portfolio">
-      <h2>My Portfolio</h2>
-      <p>project's section</p>
-      <Link to="/embedded" className="xtraBTN">
-        Low Level / Embedded Projects
-      </Link>
-      <Link to="/datavisual" className="xtraBTN">
-        Data Analytics / Data Engineering Projects
-      </Link>
-      <div className="portfolio-grid">
-        {projects.map((project, index) => (
-          <div key={index} className="project">
-            <img
-              src={`/images/${project.image}`}
-              alt={project.title}
-              className="project-image"
-            />
-            <h3>{project.title}</h3>
-            <p>{project.description}</p>
-            <a href={project.url} target="_blank" rel="noopener noreferrer">
-              View Project
-            </a>
+    <div className="page">
+      <div className="wrap">
+        <header className="work-intro">
+          <p className="kicker">Work</p>
+          <h1 className="display">Selected projects</h1>
+          <p className="lede">
+            Production work first, then the systems and applications behind it.
+            The Hem Over Heels app is the current flagship — a live product for
+            a real Florida business.
+          </p>
+        </header>
+
+        <article className="card featured-card work-featured">
+          <div className="featured-visual">
+            <PhoneMock />
           </div>
-        ))}
+          <div className="featured-copy">
+            <p className="kicker">{featuredProject.tag}</p>
+            <h3>{featuredProject.title}</h3>
+            <p>{featuredProject.longDescription}</p>
+            <div className="btn-row">
+              <Link to="/work/hem-over-heels" className="btn btn-primary">
+                Case study
+              </Link>
+              <a
+                className="btn btn-ghost"
+                href={featuredProject.links[1].href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Google Play
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <div className="filters" role="tablist" aria-label="Project filters">
+          {filters.map((item) => (
+            <button
+              key={item.id}
+              type="button"
+              className={`filter-btn${filter === item.id ? " active" : ""}`}
+              onClick={() => setFilter(item.id)}
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
+
+        <div className="project-grid">
+          {visible.map((project) => (
+            <ProjectCard key={project.title} project={project} />
+          ))}
+        </div>
       </div>
-      <Link
-        to="#"
-        className="xtraBTN"
-        onClick={(e) => {
-          e.preventDefault();
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        }}
-      >
-        Ride to the top!
-      </Link>
     </div>
   );
-};
+}
 
 export default Portfolio;

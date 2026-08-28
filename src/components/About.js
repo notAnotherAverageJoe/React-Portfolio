@@ -1,67 +1,99 @@
-import React, { useState } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 import "./styles/About.css";
+
+const experience = [
+  {
+    role: "Software Engineer",
+    org: "Tempest Labs LLC",
+    time: "2026 — Present",
+    detail:
+      "Custom software for small businesses: mobile products, internal tools, and customer experience work. Lead engineer on the Hem Over Heels app.",
+  },
+  {
+    role: "Software Engineer",
+    org: "Outlier",
+    time: "2025 — Present",
+    detail:
+      "Front-end quality work in TypeScript and Next.js, plus prompt engineering used to evaluate design and code quality.",
+  },
+  {
+    role: "Software Engineering",
+    org: "Springboard",
+    time: "2024",
+    detail:
+      "Career-track program covering full-stack development, testing, Git, and shipping complete applications.",
+  },
+];
+
+const skillGroups = [
+  {
+    title: "Languages",
+    items: "JavaScript, TypeScript, Python, C, C++, SQL, Erlang, Rust, COBOL",
+  },
+  {
+    title: "Web & data",
+    items: "React, Node.js, Express, Flask, PostgreSQL, REST APIs, Dash",
+  },
+  {
+    title: "Systems",
+    items: "Linux, Git, embedded C, assembly, RTOS, distributed Erlang",
+  },
+];
 
 function About() {
   return (
-    <div className="about-page-container">
-      <h1>About Me!</h1>
-      <p>
-        As a proud veteran and dedicated junior software engineer, I bring a
-        unique blend of discipline, critical thinking, and problem-solving
-        skills to every project I undertake. My journey has equipped me with a
-        solid foundation in various programming languages, including Python,
-        Rust, and JavaScript, and a passion for continuous learning and
-        innovation.
-      </p>
-      <br />
-      <p>
-        <strong>Project Highlight:</strong> BitBuddy Cryptocurrency Platform
-        BitBuddy is a cryptocurrency platform I developed using Flask, enabling
-        users to buy, sell, and stake cryptocurrencies while providing real-time
-        market data. This project showcases my skills in both frontend and
-        backend development, as well as my ability to integrate external APIs
-        for real-time data retrieval.
-      </p>
-      <p>
-        <strong>Key Features:</strong> User authentication and portfolio
-        management Real-time market data integration Cryptocurrency transactions
-        and staking calculator RESTful API for cryptocurrency management Crypto
-        mining game for user engagement Technologies Used:
-      </p>
-      <p>
-        Flask, SQLAlchemy, PostgreSQL HTML, CSS, JavaScript External APIs for
-        market data Git, Linux, CMD.
-        <br />
-        <strong>
-          <em>Technical Skills Programming Languages:</em>
-        </strong>
-        <ul class="no-dot">
-          <li>Python</li>
-          <li>JavaScript</li>
-          <li>C & C++</li>
-          <li>ASM 86/64 AT&T / Intel Syntax</li>
-          <li>Erlang</li>
-          <li>SQL</li>
-          <li>COBOL</li>
-        </ul>
-        <strong>Tools:</strong> Git, Linux, Command Line Software Development:
-        Data structures, algorithms, debugging, testing
-        <strong>
-          {" "}
-          Soft Skills
-          <br />
-        </strong>
-        Collaboration and teamwork Effective communication Problem-solving and
-        critical thinking Time management Attention to detail Adaptability and
-        creativity
-      </p>
-      <p>
-        <strong>Veteran</strong> As a Veteran, I have honed my skills in
-        discipline, leadership, and adaptability, which I now apply to my career
-        in software engineering. I am eager to bring my diverse background and
-        technical expertise to a dynamic development team, contributing to
-        innovative projects and continuously advancing my skills in the field.
-      </p>
+    <div className="page">
+      <div className="wrap">
+        <header className="about-hero">
+          <p className="kicker">About</p>
+          <h1 className="display">Engineer first. Veteran always.</h1>
+        </header>
+
+        <div className="about-grid">
+          <div className="about-copy">
+            <p>
+              I am a software engineer in West Palm Beach. I build software
+              people actually use — not just portfolio demos. Through Tempest
+              Labs I design and ship products for real businesses.
+            </p>
+            <p>
+              The clearest example is{" "}
+              <Link to="/work/hem-over-heels">Hem Over Heels</Link>: a live iOS
+              and Android app for a Boynton Beach tailoring and repair shop that
+              has been serving customers since 2009. Customers book services,
+              track orders, and browse the shop from their phone.
+            </p>
+            <p>
+              I still like the lower levels of the stack — C, shells, distributed
+              Erlang — because I want to understand how things run, not only how
+              they look. I am a United States Air Force veteran, and I am open
+              to relocation.
+            </p>
+          </div>
+
+          <div className="timeline">
+            {experience.map((item) => (
+              <article key={item.org}>
+                <p className="kicker">{item.time}</p>
+                <h3>
+                  {item.role} · {item.org}
+                </h3>
+                <p>{item.detail}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div className="skill-groups">
+          {skillGroups.map((group) => (
+            <article className="card skill-block" key={group.title}>
+              <h3>{group.title}</h3>
+              <p>{group.items}</p>
+            </article>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
