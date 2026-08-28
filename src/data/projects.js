@@ -6,6 +6,7 @@ export const featuredProject = {
   role: "Product engineer, Tempest Labs",
   category: "featured",
   tag: "Live mobile product",
+  image: "hemoverheels.png",
   description:
     "Customer app for a real tailoring and repair shop. Book services, track orders, and explore the shop from iPhone or Android.",
   longDescription:
