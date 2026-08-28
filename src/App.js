@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
@@ -32,6 +32,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/work/hem-over-heels" element={<HemOverHeels />} />
+          <Route path="/Certifications" element={<Navigate to="/about" replace />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/embedded" element={<Embedded />} />
           <Route path="/datavisual" element={<DataVisual />} />
