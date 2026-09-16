@@ -36,6 +36,16 @@ export const featuredProject = {
 export const projects = [
   featuredProject,
   {
+    title: "BitBuddy",
+    category: "apps",
+    tag: "Live product",
+    description:
+      "Educational classroom for crypto with an ordered Learn path, a wallet sandbox you can try without an account, and paper trading on live market data. No real money.",
+    url: "https://www.thebitbuddy.com/",
+    image: "bitbuddy.png",
+    tags: ["Flask", "PostgreSQL", "APIs"],
+  },
+  {
     title: "Property Preservation Plus",
     category: "apps",
     description:
@@ -43,15 +53,6 @@ export const projects = [
     url: "https://github.com/notAnotherAverageJoe/Property-Preservation-Plus",
     image: "PPP.png",
     tags: ["React", "Node.js", "PostgreSQL"],
-  },
-  {
-    title: "BitBuddy",
-    category: "apps",
-    description:
-      "Educational cryptocurrency platform with portfolios, live market data, staking tools, and a full transaction flow.",
-    url: "https://github.com/notAnotherAverageJoe/bit_buddy",
-    image: "big.jpg",
-    tags: ["Flask", "PostgreSQL", "APIs"],
   },
   {
     title: "Jobly API",
@@ -262,13 +263,15 @@ export const projects = [
   },
 ];
 
-export const selectedProjects = projects.filter((project) =>
-  [
-    "Property Preservation Plus",
-    "BitBuddy",
-    "Jobly API",
-    "Erlang Chat Server",
-    "OceanShell",
-    "COBOL Payroll + PostgreSQL",
-  ].includes(project.title)
-);
+const selectedTitles = [
+  "BitBuddy",
+  "Property Preservation Plus",
+  "Jobly API",
+  "Erlang Chat Server",
+  "OceanShell",
+  "COBOL Payroll + PostgreSQL",
+];
+
+export const selectedProjects = selectedTitles
+  .map((title) => projects.find((project) => project.title === title))
+  .filter(Boolean);
