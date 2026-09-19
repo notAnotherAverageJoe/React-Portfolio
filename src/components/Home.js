@@ -1,6 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { featuredProject, selectedProjects } from "../data/projects";
+import {
+  featuredProject,
+  selectedProjects,
+  bitBuddyProject,
+} from "../data/projects";
 import PhoneMock from "./PhoneMock";
 import ProjectCard from "./ProjectCard";
 import "./styles/Home.css";
@@ -106,6 +110,36 @@ function Home() {
                   rel="noopener noreferrer"
                 >
                   App Store
+                </a>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section className="spotlight" aria-labelledby="bitbuddy-spotlight-title">
+          <h2 className="sr-only">Also shipping</h2>
+          <article className="card spotlight-card">
+            <div className="spotlight-visual">
+              <img
+                src={`/images/${bitBuddyProject.image}`}
+                alt="BitBuddy classroom hero"
+              />
+            </div>
+            <div className="spotlight-copy">
+              <p className="kicker">Also shipping</p>
+              <h3 id="bitbuddy-spotlight-title">{bitBuddyProject.title}</h3>
+              <p>{bitBuddyProject.description}</p>
+              <p className="spotlight-note">
+                A Tempest Labs owned product, not client work.
+              </p>
+              <div className="btn-row">
+                <a
+                  className="btn btn-primary"
+                  href={bitBuddyProject.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Open BitBuddy
                 </a>
               </div>
             </div>

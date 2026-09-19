@@ -33,18 +33,20 @@ export const featuredProject = {
   ],
 };
 
+export const bitBuddyProject = {
+  title: "BitBuddy",
+  category: "apps",
+  tag: "Live product",
+  description:
+    "Educational classroom for crypto with an ordered Learn path, a wallet sandbox you can try without an account, and paper trading on live market data. No real money.",
+  url: "https://www.thebitbuddy.com/",
+  image: "bitbuddy.png",
+  tags: ["Flask", "PostgreSQL", "APIs"],
+};
+
 export const projects = [
   featuredProject,
-  {
-    title: "BitBuddy",
-    category: "apps",
-    tag: "Live product",
-    description:
-      "Educational classroom for crypto with an ordered Learn path, a wallet sandbox you can try without an account, and paper trading on live market data. No real money.",
-    url: "https://www.thebitbuddy.com/",
-    image: "bitbuddy.png",
-    tags: ["Flask", "PostgreSQL", "APIs"],
-  },
+  bitBuddyProject,
   {
     title: "Property Preservation Plus",
     category: "apps",
