@@ -125,7 +125,8 @@
 
 .spotlight-card {
   display: grid;
-  grid-template-columns: minmax(200px, 0.7fr) 1.3fr;
+  grid-template-columns: minmax(240px, 320px) 1fr;
+  align-items: center;
   overflow: hidden;
 }
 
@@ -134,7 +135,9 @@
 }
 
 .spotlight-visual {
-  min-height: 220px;
+  aspect-ratio: 16 / 10;
+  margin: 16px 0 16px 16px;
+  border-radius: 12px;
   background: #0a0c0e;
   overflow: hidden;
 }
@@ -143,7 +146,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top center;
+  object-position: center top;
 }
 
 .spotlight-copy {
@@ -309,8 +312,8 @@
   }
 
   .spotlight-visual {
-    min-height: 0;
-    aspect-ratio: 16 / 8;
+    margin: 16px 16px 0;
+    aspect-ratio: 16 / 9;
   }
 }
 
